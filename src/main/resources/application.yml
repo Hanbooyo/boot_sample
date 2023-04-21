@@ -30,4 +30,12 @@ spring:
 logging:
   level:
     org.hibernate.type: trace # 콘솔창에 조건에 바인딩되는 값 및 조회 결과 출력
+    com.app: debug # todo 패키지 수정
+    #요청과 응답내용을 로그로 보기위해서는 로깅레벨을 debug로 설정
 
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
