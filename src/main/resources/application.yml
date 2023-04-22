@@ -39,3 +39,13 @@ feign:
       default:
         connect-timeout: 5000
         read-timeout: 5000
+
+kakao:
+  client:
+    id: b81856dc9701f0b3df893638e7b831ee
+    secret: EZZstk0RrjG3eJozK2bUK6kkDMl6vq8J
+
+token:
+  secret: and0LXRva2VuLXNlY3JldA== # 임의의 문자열
+  access-token-expiration-time: 900000  # 15분 1000(ms) x 60(s) x 15(m)
+  refresh-token-expiration-time: 1209600000 # 2주 1000(ms) x 60 (s) x 60(m) x 24(h) x 14(d)
