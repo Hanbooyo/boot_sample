@@ -55,7 +55,7 @@ public class TokenManager {
                 .setExpiration(expirationTime)          // 토큰이 만료되는 시간
                 .claim("memberId", memberId)      // 회원 아이디
                 .claim("role", role)              // 유저 role
-                .signWith(SignatureAlgorithm.ES512, tokenSecret.getBytes(StandardCharsets.UTF_8)) // 서명알고리즘, 인코딩타입 설정
+                .signWith(SignatureAlgorithm.HS512, tokenSecret.getBytes(StandardCharsets.UTF_8)) // 서명알고리즘, 인코딩타입 설정
                 .setHeaderParam("typ", "JWT")
                 .compact();
         return accessToken;
@@ -66,7 +66,7 @@ public class TokenManager {
                 .setIssuedAt(new Date())                // 토큰이 발급된 시간
                 .setExpiration(expirationTime)          // 토큰이 만료되는 시간
                 .claim("memberId", memberId)      // 회원 아이디
-                .signWith(SignatureAlgorithm.ES512, tokenSecret.getBytes(StandardCharsets.UTF_8)) // 서명알고리즘, 인코딩타입 설정
+                .signWith(SignatureAlgorithm.HS512, tokenSecret.getBytes(StandardCharsets.UTF_8)) // 서명알고리즘, 인코딩타입 설정
                 .setHeaderParam("typ", "JWT")
                 .compact();
         return refreshToken;
