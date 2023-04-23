@@ -10,6 +10,6 @@ public interface KakaoUserInfoClient {
 
     @GetMapping(value = "/v2/user/me", consumes = "application/json")
     KakaoUserInfoResponseDto getKakaoUserInfo(@RequestHeader("Content-type") String contentType,
-                                              @RequestHeader("Authorizaition") String accessToken);
+                                              @RequestHeader("Authorization") String accessToken);
 
 }

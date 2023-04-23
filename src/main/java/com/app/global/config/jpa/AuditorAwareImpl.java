@@ -1,5 +1,6 @@
 package com.app.global.config.jpa;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.util.StringUtils;
@@ -7,10 +8,10 @@ import org.springframework.util.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 public class AuditorAwareImpl implements AuditorAware<String> {
 
-    private HttpServletRequest httpServletRequest;
-    //현재 요청에 대한 uri 정보
+    private final HttpServletRequest httpServletRequest;
 
     @Override
     public Optional<String> getCurrentAuditor() {
@@ -20,4 +21,5 @@ public class AuditorAwareImpl implements AuditorAware<String> {
         }
         return Optional.of(modifiedBy);
     }
+
 }
