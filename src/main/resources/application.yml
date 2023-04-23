@@ -42,7 +42,7 @@ feign:
 
 kakao:
   client:
-    id: b81856dc9701f0b3df893638e7b831ee
+    id: b9a280f33d2ad5d270d2e40e67ce3dc4
     secret: EZZstk0RrjG3eJozK2bUK6kkDMl6vq8J
 
 token:

@@ -9,9 +9,8 @@ import java.util.Date;
 @Setter
 @Builder
 @AllArgsConstructor @NoArgsConstructor
-//모든필드생성자 생성     기본생성자 생성
 public class JwtTokenDto {
-
+    //모든필드생성자 생성     기본생성자 생성
     private String grantType;
     private String accessToken;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")

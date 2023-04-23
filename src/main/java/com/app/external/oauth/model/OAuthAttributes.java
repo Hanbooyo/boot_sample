@@ -5,8 +5,10 @@ import com.app.domain.member.constant.Role;
 import com.app.domain.member.entity.Member;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.ToString;
 
+
+@ToString
 @Getter @Builder
 public class OAuthAttributes {
     // Social platform에서 각각 다른형태로 반환되는 정보들을 통일하기 위한 클래스
