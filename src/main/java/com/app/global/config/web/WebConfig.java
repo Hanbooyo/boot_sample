@@ -1,5 +1,6 @@
 package com.app.global.config.web;
 
+import com.app.global.interceptor.AdminAuthorizationInterceptor;
 import com.app.global.interceptor.AuthenticationInterceptor;
 import com.app.global.resolver.memberInfo.MemberInfoArgumentResolver;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     private final AuthenticationInterceptor authenticationInterceptor;
     private final MemberInfoArgumentResolver memberInfoArgumentResolver;
+
+    private final AdminAuthorizationInterceptor adminAuthorizationInterceptor;
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
@@ -46,6 +49,9 @@ public class WebConfig implements WebMvcConfigurer {
                         "/api/health");
                 //order => 인터셉터간 순서정의
                 //excludePathPatterns에 등록된 패턴들은 제외하고
+        registry.addInterceptor(adminAuthorizationInterceptor)
+                .order(2)
+                .addPathPatterns("/api/admin/**");
     }
 
     @Override
